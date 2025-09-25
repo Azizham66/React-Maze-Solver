@@ -4,7 +4,7 @@ import GoalEntity from "../Elements/GoalEntity.js";
 
 const goal = new GoalEntity();
 
-export default function Goal() {
+export default function Goal({ handleSelectionClick, goalStyle }) {
 
     function dragStart(e, type) {
         e.preventDefault(); // optional, stops default browser behavior
@@ -18,7 +18,20 @@ export default function Goal() {
     }
 
     return (
-        <div className={"select-entity"}>
+        <div
+            className={"entity"}
+            onClick={
+                () => handleSelectionClick("Goal")
+            }
+            style={{
+                display: "flex",
+                boxSizing: "border-box",
+                width: "90px",
+                height: "90px",
+                backgroundColor: "#568F87",
+                ...goalStyle
+        }}
+        >
             <img
                 src={String(goal.sprite)}
                 alt="GoalEntity Sprite"

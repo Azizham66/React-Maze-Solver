@@ -1,13 +1,20 @@
 import React from 'react';
 
-export default function Square(props) {
+export default function Square({ id, dark, handleClick, i, j, children }) {
     return (
-        <div id={props.id} style={{
-            backgroundColor: props.dark ? "darkgray" : "lightgray",
-            width: "40px",
-            height: "40px",
+        <div
+            id={id}
+            onClick={() => handleClick(i, j)}
+            style={{
+                backgroundColor: dark ? "#444" : "#555",
+                width: "100%",
+                height: "100%",
+                borderRadius: "4px",
+                position: "relative",
+                overflow: "hidden",
             }}
-             onClick={() => props.handleClick(props.i, props.j)}
-        >{props.children}</div>
-    )
+        >
+            {children}
+        </div>
+    );
 }

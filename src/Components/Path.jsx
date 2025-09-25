@@ -17,11 +17,11 @@ export default function Path(props) {
     }
 
     return (
-        <div className={"select-entity"}
+        <div className={"entity"}
              onClick={
                  () => props.handleSelectionClick("Path")
              }
-             style={{ display: "flex", boxSizing: "border-box", ...props.pathStyle }}
+             style={{ display: "flex", boxSizing: "border-box", width: "90px", height: "90px", ...props.pathStyle }}
         >
             <img
                 src={imgSrc}

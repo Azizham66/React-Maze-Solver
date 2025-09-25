@@ -4,7 +4,7 @@ import PlayerEntity from "../Elements/PlayerEntity.js";
 
 const player = new PlayerEntity();
 
-export default function Player() {
+export default function Player({ handleSelectionClick, playerStyle }) {
 
     function dragStart(e, type) {
         e.preventDefault(); // optional, stops default browser behavior
@@ -18,7 +18,21 @@ export default function Player() {
     }
 
     return (
-        <div className={"select-entity"}>
+        <div
+            className={"entity"}
+            onClick={
+                () => handleSelectionClick("Player")
+            }
+            style={{
+                display: "flex",
+                boxSizing: "border-box",
+                width: "90px",
+                height: "90px",
+                justifyContent: "center",
+                backgroundColor: "#568F87",
+                ...playerStyle
+            }}
+        >
             <img
                 src={String(player.sprites.stand)}
                 alt="PlayerEntity Sprite"

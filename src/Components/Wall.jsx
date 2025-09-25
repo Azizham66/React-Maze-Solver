@@ -18,11 +18,11 @@ export default function Wall(props) {
     }
 
     return (
-        <div className={"select-entity"}
+        <div className={"entity"}
              onClick={
                  () => props.handleSelectionClick("Wall")
              }
-             style={{display: "flex", boxSizing: "border-box" ,...props.wallStyle}}
+             style={{display: "flex", boxSizing: "border-box", width: "90px", height: "90px" ,...props.wallStyle}}
         >
             <img
                 src={String(wall.sprite)}
